@@ -7,7 +7,7 @@ vim.cmd("set shiftwidth=2")
 vim.cmd("set mouse=a")
 vim.cmd("set number")
 
--- lazypath.nvim snippet
+-- lazypath.nvim snippet, source: https://github.com/folke/lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   vim.fn.system({
@@ -20,3 +20,9 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
+
+-- Tuples for lazy config
+local plugins = {}
+local opts = {}
+
+require("lazy").setup(plugins, opts)
