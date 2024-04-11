@@ -22,7 +22,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Tuples for lazy config
-
 local opts = {}
 
 require("lazy").setup("plugins", opts)
@@ -31,7 +30,7 @@ vim.keymap.set("n", "<C-n>", ":Neotree")
 
 -- See this for treesitter on Windows; https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support
 require 'nvim-treesitter.install'.prefer_git = false
-require 'nvim-treesitter.install'.compilers = { "clang", "gcc" }
+require 'nvim-treesitter.install'.compilers = { "clang" }
 
 require("telescope").load_extension "lazy"
 require("telescope").load_extension "file_browser"
