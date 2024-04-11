@@ -1,3 +1,5 @@
+-- See also: https://stackoverflow.com/questions/78150730/failed-to-load-builtin-eslint-d-for-method-diagnostics
+-- Source: https://github.com/nvimtools/none-ls.nvim
 return {
 	"nvimtools/none-ls.nvim",
   dependencies = {
