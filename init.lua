@@ -23,9 +23,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Tuples for lazy config
-local opts = {}
+-- local opts = {}
 
-require("lazy").setup("plugins", opts)
+require("lazy").setup("plugins")
 
 vim.keymap.set("n", "<C-n>", ":Neotree")
 
