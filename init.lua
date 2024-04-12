@@ -26,8 +26,7 @@ vim.opt.rtp:prepend(lazypath)
 -- local opts = {}
 
 require("lazy").setup("plugins")
-
-vim.keymap.set("n", "<C-n>", ":Neotree")
+require("config.keymaps")
 
 -- See this for treesitter on Windows; https://github.com/nvim-treesitter/nvim-treesitter/wiki/Windows-support
 require("nvim-treesitter.install").prefer_git = false

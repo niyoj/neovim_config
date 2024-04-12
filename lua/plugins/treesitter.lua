@@ -24,6 +24,7 @@ return {
 		},
 		config = function()
 			require("neo-tree").setup({
+        close_if_last_window = true,
 				default_component_configs = {
 					git_status = {
 						symbols = {
@@ -48,6 +49,7 @@ return {
 						hide_hidden = false,
 						never_show = {
 							".git",
+              ".node_modules",
 						},
 					},
 				},
