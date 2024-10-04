@@ -33,5 +33,7 @@ require("config.keymaps")
 require("nvim-treesitter.install").prefer_git = false
 require("nvim-treesitter.install").compilers = { "clang" }
 
-require("catppuccin").setup()
-vim.cmd.colorscheme("catppuccin")
+-- require("catppuccin").setup()
+-- vim.cmd.colorscheme("catppuccin")
+
+vim.cmd([[colorscheme tokyonight]])

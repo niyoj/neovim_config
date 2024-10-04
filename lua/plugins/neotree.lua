@@ -62,7 +62,7 @@ return {
 					hide_hidden = false,
 					never_show = {
 						".git",
-						".node_modules",
+						"node_modules",
 					},
 				},
 			},
