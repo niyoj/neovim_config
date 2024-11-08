@@ -11,7 +11,7 @@ return {
 		lazy = false,
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "tsserver", "lua_ls", "pyright" },
+				ensure_installed = { "typescript-language-server", "lua_ls", "pyright" },
 			})
 		end,
 		opts = {
@@ -31,7 +31,7 @@ return {
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.tsserver.setup({
+			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
 			})
 
