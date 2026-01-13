@@ -1,4 +1,4 @@
--- See also: https://stackoverflow.com/questions/78150730/failed-to-load-builtin-eslint-d-for-method-diagnostics
+-- Formatting and diagnostics for Python and general development
 -- Source: https://github.com/nvimtools/none-ls.nv
 return {
   "nvimtools/none-ls.nvim",
@@ -10,9 +10,18 @@ return {
 
     null_ls.setup({
       sources = {
+        -- Lua
         null_ls.builtins.formatting.stylua,
-        null_ls.builtins.formatting.prettier,
+        
+        -- Python
+        null_ls.builtins.formatting.black.with({
+          extra_args = { "--line-length=88" },
+        }),
+        null_ls.builtins.diagnostics.pylint,
         require("none-ls.diagnostics.eslint_d"),
+        null_ls.builtins.diagnostics.ruff,
+        
+        -- General
         null_ls.builtins.completion.spell,
       },
     })
