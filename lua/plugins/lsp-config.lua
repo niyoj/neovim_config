@@ -11,7 +11,7 @@ return {
     lazy = false,
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "pyright", "pylint", "lua_ls" },
+        ensure_installed = { "pyright", "lua_ls" },
       })
     end,
     opts = {
