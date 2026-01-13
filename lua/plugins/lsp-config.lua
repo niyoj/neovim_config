@@ -24,11 +24,10 @@ return {
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      local lspconfig = require("lspconfig")
-      
       -- Python LSP setup with enhanced options
-      lspconfig.pyright.setup({
-        capabilities = capabilities,
+      vim.lsp.config("pyright", {
+        cmd = { "pyright-langserver", "--stdio" },
+        root_markers = { "pyproject.toml", "setup.py", ".git" },
         settings = {
           python = {
             analysis = {
@@ -38,11 +37,18 @@ return {
             },
           },
         },
-      })
-      
-      lspconfig.lua_ls.setup({
         capabilities = capabilities,
       })
+
+      vim.lsp.config("lua_ls", {
+        cmd = { "lua-language-server" },
+        root_markers = { ".luarc.json", ".luarc.jsonc", "selene.toml", "stylua.toml" },
+        capabilities = capabilities,
+      })
+
+      -- Enable the servers
+      vim.lsp.enable("pyright")
+      vim.lsp.enable("lua_ls")
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
